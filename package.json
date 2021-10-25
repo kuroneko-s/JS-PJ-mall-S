@@ -4,7 +4,7 @@
   "description": "shoping mall but very smally",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon --delay 2"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "homepage": "https://github.com/kuroneko-s/small_mall#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
