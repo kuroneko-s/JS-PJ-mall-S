@@ -8,21 +8,92 @@ body {
   min-height: 85vh;
   margin: 0 auto;
   background-color: blueviolet;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
 }
 
-.main_paging {
-  width: 90%;
-  margin: 0 auto;
+.a {
+  overflow-y: hidden;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.a img {
+  width: 48vw;
+  height: 100%;
 }
 
 .box {
-  height: 300px;
+  width: 30vw;
+
+  align-items: flex-start;
+  overflow: hidden;
+
+  background-color: aliceblue;
+}
+
+.box .box_title {
+  line-height: 44px;
+  margin-bottom: 10px;
+}
+
+.box .box_desc {
+  margin-bottom: 18px;
+  line-height: 22px;
+}
+
+.box .box_link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.box .box_btn {
+  cursor: pointer;
+  width: 220px;
+  height: 35px;
+  text-align: center;
+
+  background-color: #2f3640;
+  color: aliceblue;
+}
+
+.b {
+  background-color: aliceblue;
+}
+
+.b img {
+  width: 200px;
+  height: 80%;
+}
+
+.slider {
+  width: 880px;
+
+  padding: auto 0;
+  margin-left: 30px;
+}
+
+.slider .slider_box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.slider_img:not(:last-child) {
+  margin-right: 10px;
+}
+
+.slider_btn {
+  position: absolute;
+}
+
+.lbtn {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.rbtn {
+  position: relative;
+  left: 880px;
+  top: 0;
 }

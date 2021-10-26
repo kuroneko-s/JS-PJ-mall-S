@@ -1,65 +1,33 @@
-.header {
-  width: 90%;
-  margin: 0 auto;
-  height: 8vh;
-
-  background-color: rgba(129, 255, 255, 0.6);
-
+.fr {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+
+.jcB {
   justify-content: space-between;
 }
 
-.header .header_logo {
-  width: 12%;
-  font-size: 1.7rem;
-  font-weight: 700;
-  text-align: center;
-
-  cursor: pointer;
+.fs44 {
+  font-size: 44px;
 }
 
-.header .header_menu {
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
+.he31 {
+  height: 310px;
 }
 
-.header .header_menu ul {
-  text-align: center;
-  cursor: pointer;
-
-  font-size: 1.2rem;
-  font-weight: 550;
+.mt20 {
+  margin-top: 20px;
 }
 
-.header .header_user {
-  width: 12%;
-  margin: 0 10px;
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-
-  cursor: pointer;
+.rbox {
+  margin: 30px auto;
 }
 
-.header_user_selector:not(:last-child) {
-  margin-right: 15px;
-}
-
-.footer {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0 15px;
-  min-height: 7vh;
-  background-color: black;
-  color: white;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.lbox {
+  margin: auto 0;
 }

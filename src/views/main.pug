@@ -6,14 +6,39 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/static/css/reset.css")
         link(rel="stylesheet", href="/static/css/main.css")
+        link(rel="stylesheet", href="/static/css/footer.css")
+        link(rel="stylesheet", href="/static/css/header.css")
         link(rel="stylesheet", href="/static/css/common.css")
         link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", rel="stylesheet") 
         title Main
     body
         include partials/header
         main.container
-        section.main_paging
-            h1 Paging이 적용될 자리
+            .fr.a.he31.jcB.mt20
+                img(src="/static/resources/a.webp", alt="a")#resizeImg
+                .box.fc.rbox
+                    span.box_title.fs44 The fashion forecast
+                    span.box_desc Warm up your wardrobe with our ultimate coat and knitwear checklist
+                    a.box_link Shop the winter edit
+            .fr.b.he31.jcB.mt20
+                .box.fc.lbox
+                    h4 858 New items 
+                    span.box_title.fs44 New In
+                    span.box_desc Stay ahead of the style curve with our latest arrivals
+                    button.box_btn Shop New In
+                .slider
+                    .lbtn
+                        button.slider_btn <
+                    .slider_box
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                        img(src="/static/resources/a.webp", alt="b").slider_img
+                    .rbtn
+                        button.slider_btn >
+                    
         include partials/footer
 
     script(src="/static/js/main.js") 
