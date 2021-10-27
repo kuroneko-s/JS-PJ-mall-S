@@ -5,23 +5,24 @@ body {
 
 .container {
   width: 90%;
-  min-height: 85vh;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: blueviolet;
+
+  overflow-x: hidden;
 }
 
 .a {
   overflow-y: hidden;
 }
 
-.a img {
-  width: 48vw;
+.a img,
+.c img {
+  width: 100%;
   height: 100%;
 }
 
 .box {
-  width: 30vw;
-
   align-items: flex-start;
   overflow: hidden;
 
@@ -59,41 +60,73 @@ body {
 
 .b img {
   width: 200px;
-  height: 80%;
+  height: 270px;
 }
 
 .slider {
-  width: 880px;
-
-  padding: auto 0;
   margin-left: 30px;
+
+  position: relative;
 }
 
 .slider .slider_box {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  height: 100%;
 
   flex-wrap: nowrap;
   overflow-x: hidden;
 }
 
-.slider_img:not(:last-child) {
+.slider_img_box {
+  margin-top: 10px;
+}
+
+.slider_img_box:not(:last-child) {
   margin-right: 10px;
 }
 
-.slider_btn {
-  position: absolute;
+.slider_img_box p {
+  text-align: center;
 }
 
 .lbtn {
-  position: relative;
+  position: absolute;
   left: 0;
-  top: 0;
+  top: 120px;
+  width: 50px;
+  height: 50px;
 }
 
 .rbtn {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 50px;
+  height: 50px;
+}
+
+.d {
   position: relative;
-  left: 880px;
-  top: 0;
+}
+
+.accordion {
+  flex-wrap: nowrap;
+}
+
+.item {
+  display: block;
+}
+
+.item img {
+  height: 100%;
+  transform: 1.5s;
+}
+
+.scale_img {
+  max-width: 57vw;
+}
+
+.unscale_img {
+  width: 11vw;
+  object-fit: cover;
 }

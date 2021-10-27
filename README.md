@@ -47,6 +47,4 @@ REST API같은건 안쓸건데 연계쓸때 사용할 수 있음
 
 # Clone 대상 사이트
 
-## https://www.net-a-porter.com/en-kr/shop/new-in
-
-fr - flex row
+## https://www.net-a-porter.com/en-kr/
