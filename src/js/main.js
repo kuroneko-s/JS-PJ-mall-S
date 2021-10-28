@@ -25,24 +25,16 @@ const imgEls = accordionEl.querySelectorAll("img");
 
 window.addEventListener("DOMContentLoaded", () => {
   accordionEl.addEventListener("mouseover", mouseOverHandler);
-  accordionEl.addEventListener("mouseout", mouseOutHandler);
 });
 
-const mouseOutHandler = (e) => {
-  // 마우스 나갈때 확대시켜놓는 값이 없으면 지우지 말것
-  var result = [];
-
+const mouseOverHandler = (e) => {
   imgEls.forEach((imgEl) => {
     if (imgEl.classList.contains("scale_img")) {
-      result.push(imgEl);
+      imgEl.classList.remove("scale_img");
+      imgEl.classList.add("unscale_img");
     }
   });
 
-  e.target.classList.remove("unscale_img");
-  e.target.classList.add("unscale_img");
-};
-
-const mouseOverHandler = (e) => {
   e.target.classList.remove("unscale_img");
   e.target.classList.add("scale_img");
 };

@@ -1,10 +1,17 @@
 .header {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   height: 5vh;
 
-  background-color: rgba(129, 255, 255, 0.6);
+  background-color: #111111;
 
+  color: white;
+}
+
+.header_box {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;

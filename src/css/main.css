@@ -7,7 +7,6 @@ body {
   width: 90%;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: blueviolet;
 
   overflow-x: hidden;
 }
@@ -25,8 +24,6 @@ body {
 .box {
   align-items: flex-start;
   overflow: hidden;
-
-  background-color: aliceblue;
 }
 
 .box .box_title {
@@ -52,10 +49,6 @@ body {
 
   background-color: #2f3640;
   color: aliceblue;
-}
-
-.b {
-  background-color: aliceblue;
 }
 
 .b img {
@@ -119,7 +112,6 @@ body {
 
 .item img {
   height: 100%;
-  transform: 1.5s;
 }
 
 .scale_img {
