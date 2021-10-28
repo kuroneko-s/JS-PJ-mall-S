@@ -1,0 +1,60 @@
+.logo {
+  height: 18vh;
+}
+
+hr {
+  opacity: 0.3;
+}
+
+section:first-child .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo p:nth-child(3) i {
+  cursor: pointer;
+}
+
+.prent_grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  column-gap: 35px;
+}
+
+.category {
+  height: auto;
+  display: block;
+}
+
+.category1 {
+  display: block;
+  position: sticky;
+  top: 50px;
+  z-index: 0;
+}
+
+.items {
+  height: 100%;
+}
+
+.category1 {
+  height: 100px;
+  width: 100%;
+  background-color: blueviolet;
+}
+
+.items_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+}
+
+.item1 {
+  width: 100%;
+  height: 350px;
+  background-color: coral;
+}

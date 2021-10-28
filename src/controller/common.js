@@ -1,11 +1,15 @@
 export const main = (req, res) => {
-res.render("main")
-}
+  res.render("main");
+};
 
-export const itemDetail = (req, res) => res.render("itemdetail")
+export const items = (req, res) => {
+  res.render("items");
+};
 
-export const payment = (req, res) => res.render("payment")
+export const itemDetail = (req, res) => res.render("itemdetail");
 
-export const success = (req, res) => res.render("success")
+export const payment = (req, res) => res.render("payment");
 
-export const failed = (req, res) => res.render("failed")
+export const success = (req, res) => res.render("success");
+
+export const failed = (req, res) => res.render("failed");

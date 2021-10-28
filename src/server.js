@@ -2,6 +2,7 @@ import express from "express";
 import commonRouter from "./routers/common";
 import helmet from "helmet";
 import morgan from "morgan";
+import { main } from "./controller/common";
 
 const app = new express();
 const PORT = 4000;
@@ -16,7 +17,7 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 // routing
-app.get("/", (req, res) => res.render("main"));
+app.get("/", main);
 app.use("/", commonRouter);
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
