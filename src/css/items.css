@@ -24,28 +24,6 @@ section:first-child .logo {
   column-gap: 35px;
 }
 
-.category {
-  height: auto;
-  display: block;
-}
-
-.category1 {
-  display: block;
-  position: sticky;
-  top: 50px;
-  z-index: 0;
-}
-
-.items {
-  height: 100%;
-}
-
-.category1 {
-  height: 100px;
-  width: 100%;
-  background-color: blueviolet;
-}
-
 .items_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,8 +31,26 @@ section:first-child .logo {
   gap: 15px;
 }
 
-.item1 {
+.items_grid .item {
+  height: 800px;
+}
+
+.items_grid img {
   width: 100%;
-  height: 350px;
-  background-color: coral;
+}
+
+.menus {
+  display: block;
+}
+
+.menus_box {
+  display: block;
+  position: sticky;
+  width: auto;
+  height: auto;
+  top: 50px;
+  z-index: 0;
+}
+
+.menus_subbox {
 }

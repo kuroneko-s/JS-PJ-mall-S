@@ -48,3 +48,5 @@ REST API같은건 안쓸건데 연계쓸때 사용할 수 있음
 # Clone 대상 사이트
 
 ## https://www.net-a-porter.com/en-kr/
+
+페이지 로딩되는 프로그레스 바 상단에 보여주기

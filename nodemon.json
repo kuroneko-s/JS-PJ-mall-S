@@ -1,4 +1,4 @@
 {
-    "ignore": ["src/views/*", "src/js/*", "src/controller/*", "src/routers/*", "src/css/*"],
+    "ignore": ["src/views/*", "src/js/*", "src/routers/*", "src/css/*"],
     "exec": "babel-node src/server.js"
 }

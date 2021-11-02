@@ -12,6 +12,8 @@ html(lang="en")
         link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", rel="stylesheet") 
         title Items
     body
+        include mixins/itemBlock
+        include mixins/itemCategory
         include partials/header
         main.container
             section
@@ -24,27 +26,15 @@ html(lang="en")
                         span  Favorite Designer
                 hr
             section.prent_grid
-                aside.category
-                    //- pug에서 반복시키는 함수 돌려야함.
-                    .category1 
-                        div 항목
+                aside.menus
+                    .menus_box
+                        each obj in menus ? menus : []
+                            +itemCategory(obj)
                 section.items.mb50
                     .items_grid
-                        //- pug에서 반복시키는 함수 돌려야함.
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
-                        .items1
-                            .item1 Hello!!
+                        each item in items ? items : []
+                            +itemBlock(item)
+                        
             section.scrollbtn.mb20 뀨!
             hr
             section.paging.mb20 Paging! 

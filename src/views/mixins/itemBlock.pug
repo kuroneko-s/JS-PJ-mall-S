@@ -1,0 +1,7 @@
+mixin itemBlock(itemObj={})
+    div.item
+        img(src=itemObj.src, alt=itemObj.title)
+        div.item_box
+            div=itemObj.title
+            div=itemObj.description
+            div=itemObj.price
