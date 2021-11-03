@@ -1,9 +1,14 @@
-.logo {
-  height: 18vh;
+:root {
+  --black-arpha02: rgba(17, 17, 17, 0.2);
+  --black-arpha06: rgba(17, 17, 17, 0.6);
 }
 
 hr {
   opacity: 0.3;
+}
+
+.logo {
+  height: 18vh;
 }
 
 section:first-child .logo {
@@ -15,6 +20,72 @@ section:first-child .logo {
 
 .logo p:nth-child(3) i {
   cursor: pointer;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  position: relative;
+}
+
+.options .itemCnt {
+  color: var(--black-arpha06);
+  font-size: 13px;
+}
+
+.options .select {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--black-arpha06);
+  border-radius: 0.25rem;
+
+  min-width: 20ch;
+  max-width: 30ch;
+  width: 100%;
+  height: 30px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.options .select_arrow {
+  float: right;
+}
+
+.options .select_box {
+  position: absolute;
+  border: 1px solid var(--black-arpha06);
+  border-radius: 0.25rem;
+  z-index: 2;
+
+  margin: 0;
+  right: 0;
+  top: 50px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  min-width: 20ch;
+  max-width: 30ch;
+  background-color: #fff;
+}
+
+.options .select_box li {
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.options .select_box li:hover {
+  background-color: var(--black-arpha02);
+}
+
+.checked {
+  border-left: 3px solid red;
 }
 
 .prent_grid {
@@ -32,6 +103,7 @@ section:first-child .logo {
 }
 
 .items_grid .item {
+  z-index: 1;
   height: 800px;
 }
 
@@ -52,5 +124,12 @@ section:first-child .logo {
   z-index: 0;
 }
 
-.menus_subbox {
+.menus_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 60px;
+  border-bottom: 1px solid var(--black-arpha02);
 }

@@ -1,8 +1,12 @@
 mixin itemCategory(itemObj={})
-    div.menus_item
-        div.menu_title
+    .menus_item
+        .menu_title
             p=itemObj.title
             span=itemObj.description
-        div.menu_arrow
+        .menu_arrow
             //- i.fas.fa-arrow-up
             i.fas.fa-arrow-down
+        .menu_radio
+            each value in itemObj.innerCategory
+                input(type="radio", id=value, name="innerCategory" value=value)
+                label(for=value)=value

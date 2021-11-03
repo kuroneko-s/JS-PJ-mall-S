@@ -25,11 +25,24 @@ html(lang="en")
                         i.far.fa-heart 
                         span  Favorite Designer
                 hr
+            .options
+                .itemCnt 100 Results
+                .itemSort
+                    .select#select
+                        span.select_title Recommended
+                        span.select_arrow
+                            i.fas.fa-arrow-down
+                ul.select_box.dispnone
+                    li(data-value="1") Recommended
+                    li(data-value="2") New In
+                    li(data-value="3") Price Hight to Low
+                    li(data-value="4") Price Low to Hight
             section.prent_grid
                 aside.menus
                     .menus_box
-                        each obj in menus ? menus : []
-                            +itemCategory(obj)
+                        .menus_subbox
+                            each obj in menus ? menus : []
+                                +itemCategory(obj)
                 section.items.mb50
                     .items_grid
                         each item in items ? items : []

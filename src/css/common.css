@@ -108,3 +108,8 @@
 .net50 {
   top: -50px;
 }
+
+/* */
+.dispnone {
+  display: none;
+}
