@@ -40,17 +40,25 @@ html(lang="en")
             section.prent_grid
                 aside.menus
                     .menus_box
-                        .menus_subbox
-                            each obj in menus ? menus : []
-                                +itemCategory(obj)
+                        .menus_scrollbox
+                            .menus_subbox#menuBox
+                                each obj, index in menus ? menus : []
+                                    +itemCategory(obj, index)
                 section.items.mb50
+                    .menu_checked.mb20#checkBox
+                        each value, index in checkboxs
+                            .check_box.mr10.mb10(data-check-index=index)
+                                span=value 
+                                i.fas.fa-times.ml10#close(data-check-close=index)
                     .items_grid
                         each item in items ? items : []
                             +itemBlock(item)
                         
-            section.scrollbtn.mb20 뀨!
+            section.scrollbtn.mb20
+                i.fas.fa-arrow-circle-up#scrollbtn
             hr
-            section.paging.mb20 Paging! 
+            section.paging.mb20 
+                div Paging! (이건 나중에 값 보낼때 적용해줘야할 듯) 
                     
             
         include partials/footer

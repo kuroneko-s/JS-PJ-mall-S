@@ -78,12 +78,20 @@
   margin-top: 35px;
 }
 
+.mt5 {
+  margin-top: 5px;
+}
+
 .mt50 {
   margin-top: 50px;
 }
 
 .ml50 {
   margin-left: 50px;
+}
+
+.ml10 {
+  margin-left: 10px;
 }
 
 .mb10 {
@@ -96,6 +104,15 @@
 
 .mb50 {
   margin-bottom: 50px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+/* PADDING */
+.pt10 {
+  padding-top: 10px;
 }
 
 /* POSITION */
@@ -112,4 +129,8 @@
 /* */
 .dispnone {
   display: none;
+}
+
+.test {
+  background-color: red;
 }

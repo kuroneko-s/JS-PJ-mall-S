@@ -1,12 +1,14 @@
-mixin itemCategory(itemObj={})
-    .menus_item
-        .menu_title
-            p=itemObj.title
-            span=itemObj.description
-        .menu_arrow
-            //- i.fas.fa-arrow-up
-            i.fas.fa-arrow-down
-        .menu_radio
-            each value in itemObj.innerCategory
-                input(type="radio", id=value, name="innerCategory" value=value)
-                label(for=value)=value
+mixin itemCategory(itemObj={}, index)
+    .menus_innerbox.pt10(data-index=index)
+        .menu_item
+            .menu_title
+                p=itemObj.title
+                p.mt5=itemObj.description
+            .menu_arrow
+                //- i.fas.fa-arrow-up
+                i.fas.fa-arrow-down
+        .menu_radio.dispnone#menuRadio
+            each value, index in itemObj.innerCategory
+                .radio_group.pt10(data-radio-index=index)
+                    .radio_check.mr10
+                    p=value

@@ -1,6 +1,13 @@
 :root {
   --black-arpha02: rgba(17, 17, 17, 0.2);
+  --black-arpha04: rgba(17, 17, 17, 0.4);
   --black-arpha06: rgba(17, 17, 17, 0.6);
+  --black-arpha08: rgba(17, 17, 17, 0.8);
+  --check-box: #ff4757;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 hr {
@@ -99,16 +106,46 @@ section:first-child .logo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr;
-  gap: 15px;
+  gap: 35px;
 }
 
 .items_grid .item {
   z-index: 1;
-  height: 800px;
+  cursor: pointer;
 }
 
-.items_grid img {
-  width: 100%;
+.items_grid .item_box {
+  max-height: 200px;
+}
+
+.items_grid .item_img {
+  width: 300px;
+  height: 450px;
+  background: url("../resources/a.webp") no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+}
+
+.items_grid .item_img:hover {
+  width: 300px;
+  height: 450px;
+  background: url("../resources/a.webp") no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+}
+
+.items_grid .item_box_title,
+.items_grid .item_box_price {
+  font-weight: 600;
+  font-size: 1.2rem;
+  word-break: break-all;
+}
+
+.items_grid .item_box_description,
+.items_grid .item_box_small {
+  font-weight: 400;
+  font-size: 1rem;
+  word-break: break-all;
 }
 
 .menus {
@@ -124,12 +161,133 @@ section:first-child .logo {
   z-index: 0;
 }
 
-.menus_item {
+.menus_innerbox {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  cursor: pointer;
+
+  min-height: 60px;
+  border-bottom: 1px solid var(--black-arpha02);
+}
+
+.menus_innerbox:first-child {
+  border-top: 1px solid var(--black-arpha02);
+}
+
+.menus_scrollbox {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+
+.menu_item {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.menu_title p:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.menu_title p:nth-child(2) {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.menu_item,
+.menu_item p,
+.menu_item span,
+.menu_item i,
+#checkBox span {
+  pointer-events: none;
+}
+
+.menu_radio {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+
+  width: 100%;
+}
+
+.radio_group:last-child {
+  margin-bottom: 10px;
+}
+
+.radio_group {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.radio_checked {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+
+  border-radius: 50%;
+  border: 3px solid var(--check-box);
+}
+
+.radio_group .radio_check {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--black-arpha06);
+}
+
+.menu_checked {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   min-height: 60px;
-  border-bottom: 1px solid var(--black-arpha02);
+  max-height: 120px;
+}
+
+.check_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  min-width: 13ch;
+  max-width: 25ch;
+  height: 40px;
+  padding: 0 10px;
+
+  border: 1px solid var(--black-arpha02);
+  box-shadow: 1px 2px 5px 1px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+}
+
+.scrollbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollbtn i {
+  cursor: pointer;
+  font-size: 2.5rem;
+  transition: 0.2s;
+}
+
+.scrollbtn i:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+  color: var(--check-box);
+}
+
+.paging {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

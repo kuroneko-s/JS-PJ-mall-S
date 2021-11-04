@@ -1,7 +1,8 @@
 mixin itemBlock(itemObj={})
     div.item
-        img(src=itemObj.src, alt=itemObj.title)
+        div.item_img
         div.item_box
-            div=itemObj.title
-            div=itemObj.description
-            div=itemObj.price
+            p.item_box_title=itemObj.title
+            p.mt5.item_box_description=itemObj.description
+            p.mt50.item_box_price=itemObj.price
+            p.mt5.item_box_small=itemObj.small
