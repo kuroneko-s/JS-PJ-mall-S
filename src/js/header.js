@@ -2,41 +2,37 @@ window.addEventListener("DOMContentLoaded", () => {
   const loginEl = document.getElementById("login");
   const popupEl = document.getElementById("popup");
   let leave = false;
-
-  const checkLeave = () => {
-    return leave;
-  };
-  const setLeave = (v) => {
-    leave = v;
-  };
+  let curTime;
+  let intervalId;
 
   const mouseoverHandler = (e) => {
     const exist = popupEl.classList.contains("dispnone");
+    if (!!intervalId) {
+      clearInterval(intervalId);
+    }
 
-    if (exist || leave) {
+    if (exist) {
+      popupEl.style.left = e.target.getBoundingClientRect().left - 175 + "px";
       popupEl.classList.remove("dispnone");
       leave = true;
     } else {
       return;
     }
+  };
 
-    console.log(leave);
+  const mouseoutHandler = (e) => {
+    curTime = new Date().getTime();
+
+    intervalId = setInterval(() => {
+      if (new Date().getTime() - curTime >= 1000) {
+        popupEl.classList.add("dispnone");
+        clearInterval(intervalId);
+      }
+    }, 100);
   };
 
   loginEl.addEventListener("mouseover", mouseoverHandler);
-
-  loginEl.addEventListener("mouseout", (e) => {
-    setTimeout(() => {
-      if (checkLeave) {
-        popupEl.classList.add("dispnone");
-        setLeave(false);
-      } else {
-        return;
-      }
-    }, 1000);
-
-    console.log(leave);
-  });
-
+  loginEl.addEventListener("mouseout", mouseoutHandler);
   popupEl.addEventListener("mouseover", mouseoverHandler);
+  popupEl.addEventListener("mouseout", mouseoutHandler);
 });
