@@ -1,3 +1,13 @@
+:root {
+  --black-arpha02: rgba(17, 17, 17, 0.2);
+  --black-arpha04: rgba(17, 17, 17, 0.4);
+  --black-arpha06: rgba(17, 17, 17, 0.6);
+  --black-arpha08: #111111cc;
+  --black: #111111;
+  --check-box: #ff4757;
+  --white: #fff;
+}
+
 /* FLEX */
 .fr {
   display: flex;
@@ -132,7 +142,7 @@
 
 /* */
 .dispnone {
-  /*display: none;*/
+  display: none;
 }
 
 .test {

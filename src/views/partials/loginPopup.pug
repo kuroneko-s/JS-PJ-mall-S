@@ -4,7 +4,12 @@ link(rel="stylesheet", href="/static/css/loginPopup.css")
     form(action="post") 
         input(type="text", placeholder="Account").mb40
         input(type="password", placeholder="Password").mb40
-        input(type="button" value="LOGIN").mb40
+        input(type="button" value="LOGIN")
+    .account
+        .account_find.mb10 Forgotten Your Password?
+        hr
+        .account_register.mt35 Don't have an account? 
+            span Register now
 
 
 script(src="/static/js/loginPopup.js")

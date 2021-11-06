@@ -11,8 +11,11 @@ window.addEventListener("DOMContentLoaded", () => {
       clearInterval(intervalId);
     }
 
-    if (exist) {
+    if (e.target.classList.contains('fas')){
       popupEl.style.left = e.target.getBoundingClientRect().left - 175 + "px";
+    }
+
+    if (exist) {
       popupEl.classList.remove("dispnone");
       leave = true;
     } else {
