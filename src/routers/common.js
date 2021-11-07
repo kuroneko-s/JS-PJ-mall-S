@@ -3,12 +3,14 @@ import {
   failed,
   itemDetail,
   items,
+  login,
   payment,
   success,
 } from "../controller/common";
 const commonRouter = express.Router();
 
 commonRouter.get("/items", items);
+commonRouter.get("/login", login);
 commonRouter.get("/payment", payment);
 commonRouter.get("/success", success);
 commonRouter.get("/failed", failed);

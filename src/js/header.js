@@ -5,6 +5,10 @@ window.addEventListener("DOMContentLoaded", () => {
   let curTime;
   let intervalId;
 
+  const loginClickHandler = () => {
+    window.location.href = '/login'
+  }
+
   const mouseoverHandler = (e) => {
     const exist = popupEl.classList.contains("dispnone");
     if (!!intervalId) {
@@ -36,6 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loginEl.addEventListener("mouseover", mouseoverHandler);
   loginEl.addEventListener("mouseout", mouseoutHandler);
+  loginEl.addEventListener("click", loginClickHandler);
   popupEl.addEventListener("mouseover", mouseoverHandler);
   popupEl.addEventListener("mouseout", mouseoutHandler);
 });

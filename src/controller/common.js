@@ -132,6 +132,8 @@ export const items = (req, res) => {
   });
 };
 
+export const login = (req, res) => res.render("login");
+
 export const itemDetail = (req, res) => res.render("itemdetail");
 
 export const payment = (req, res) => res.render("payment");
