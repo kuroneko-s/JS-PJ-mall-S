@@ -2,8 +2,46 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge 'self'")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/static/css/register.css")
+        link(rel="stylesheet", href="/static/css/common.css")
+        link(rel="stylesheet", href="/static/css/footer.css")
+        link(rel="stylesheet", href="/static/css/header.css")
+        link(rel="stylesheet", href="/static/css/reset.css")
+        link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", rel="stylesheet") 
         title Account Register
-    body 
-        h1 Account Register
+    body
+        include partials/header
+        main.container
+            .register_box
+                .login_title.mb50 REGISTER
+                form(action="post")
+                    input(type="text", name="account", placeholder="Account").mb40
+                    input(type="password", name="password", placeholder="Password").mb40
+                    div
+                        select(name="sex").mb40
+                            option(value="1") Man
+                            option(value="2") Woman   
+                        input(type="text",name="name" placeholder="Fist name").mb40
+                    .birthday
+                        label(for="") Date of birth (optional)
+                        input(type="text", name="year", placeholder="year").mb40
+                        input(type="text", name="month", placeholder="month").mb40
+                        input(type="text", name="day", placeholder="day").mb40
+                    .notification
+                        input(type="checkbox", name="notification", checked)#notification
+                        div 
+                            p 동의할거면 체크하삼
+                            p 뭐 주의사항
+                            
+                    p.mb40 By registering, your account will be subject to the Terms and Conditions & Privacy Policy
+                    input(type="button" value="Create Account").mb40#loginMainBtn
+                hr.mb40
+                .account_register
+                    div.mb20 Already have an account
+                    input(type="button", value="Sign In").ml10#mainAccountRegister
+                
+        include partials/footer
+
+    script(src="/static/js/header.js") 

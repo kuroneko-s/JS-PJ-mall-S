@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.container .login_box {
+.container .register_box {
   width: 100%;
 
   display: flex;
@@ -72,20 +72,7 @@
   width: 38%;
 }
 
-.container .account_find span {
-  width: auto;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.container .account_find span:hover {
-  opacity: 0.7;
-  font-weight: 400;
-}
-
-.login_box .account_register {
+.container .account_register {
   width: 38%;
   display: flex;
   flex-direction: column;
@@ -93,7 +80,7 @@
   align-items: center;
 }
 
-.login_box .account_register input[type="button"] {
+.register_box .account_register input[type="button"] {
   background-color: var(--white);
   color: var(--black);
   border: 1px solid var(--black-arpha04);
@@ -104,6 +91,6 @@
   cursor: pointer;
 }
 
-.login_box .account_register input[type="button"]:hover {
+.register_box .account_register input[type="button"]:hover {
   font-weight: 500;
 }
