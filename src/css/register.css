@@ -1,17 +1,18 @@
 .container {
   min-height: 88vh !important;
+  margin: 50px 0 !important;
 
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+input[title]:hover::after {
+  background-color: tomato;
 }
 
 .container .register_box {
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -23,15 +24,14 @@
 
 .container form {
   width: 38%;
-  display: flex;
-  flex-direction: column;
+
   justify-content: center;
   cursor: default;
 }
 
 .container form input:not([type="button"]) {
   border: none;
-  border-bottom: 1px solid var(--black-arpha04);
+  border: 1px solid var(--black-arpha04);
   height: 35px;
   width: 100%;
 
@@ -56,8 +56,72 @@
   background-color: var(--black-arpha06);
 }
 
+.container form input[type="checkbox"] {
+  cursor: pointer;
+}
+
 .container input:focus {
   outline: none;
+}
+
+.register_form .password_box div {
+  align-items: center;
+  border: 1px solid var(--black-arpha04);
+}
+
+.register_form .password_box input {
+  border: none !important;
+}
+
+.register_form .password_box .password_btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.register_form .password_help {
+  font-size: 0.8rem;
+}
+
+.register_form .select_box {
+  width: 30%;
+}
+
+.register_form .select_box select {
+  height: 35px;
+}
+
+.register_form .select_name {
+  width: 100%;
+}
+
+.register_form .birthday_box div {
+  width: 50%;
+}
+
+.register_form .notification_box {
+  width: 100%;
+  align-items: center;
+}
+
+.register_form .notification_text {
+  width: 100%;
+}
+
+.register_form .notification_box input {
+  height: 27px !important;
+  width: 27px !important;
+}
+
+.register_form .notification_text p:nth-child(1) {
+  font-weight: 600;
+}
+
+.register_form .tos {
+  font-size: 0.8rem;
+}
+
+.register_form .tos span {
+  cursor: pointer;
 }
 
 .container .account {
@@ -93,4 +157,17 @@
 
 .register_box .account_register input[type="button"]:hover {
   font-weight: 500;
+}
+
+/* validation css code */
+.validate {
+  border: 1px solid rgba(255, 35, 40, 0.7) !important;
+}
+
+.account_box {
+  position: relative;
+}
+
+.account_box i {
+  position: absolute;
 }

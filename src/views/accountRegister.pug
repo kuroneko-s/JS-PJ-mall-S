@@ -13,29 +13,47 @@ html(lang="en")
         title Account Register
     body
         include partials/header
-        main.container
-            .register_box
+        main.container.fc
+            .register_box.fc
                 .login_title.mb50 REGISTER
-                form(action="post")
-                    input(type="text", name="account", placeholder="Account").mb40
-                    input(type="password", name="password", placeholder="Password").mb40
-                    div
-                        select(name="sex").mb40
-                            option(value="1") Man
-                            option(value="2") Woman   
-                        input(type="text",name="name" placeholder="Fist name").mb40
-                    .birthday
-                        label(for="") Date of birth (optional)
-                        input(type="text", name="year", placeholder="year").mb40
-                        input(type="text", name="month", placeholder="month").mb40
-                        input(type="text", name="day", placeholder="day").mb40
-                    .notification
-                        input(type="checkbox", name="notification", checked)#notification
-                        div 
-                            p 동의할거면 체크하삼
-                            p 뭐 주의사항
+                form(action="post").register_form.fc#registerForm
+                    .account_box.mb40.fc
+                        label(for="account").mb5 Account 
+                        input(id="account", type="text", name="account", required).mb10
+                        i.fas.fa-exclamation-circle
+                        small Validation Message
+                    .password_box.mb40.fc
+                        label(for="password").mb5 Password
+                        .mb10.fr
+                            i.far.fa-eye.password_btn.mr10.ml10#passwordBtn
+                            input(id="password", type="password", name="password", required)
+                        small.password_help Your password must be eight characters or more and contain both an uppercase letter and a number
+                    .privacy_box.fr.mb40
+                        div.select_box.fc
+                            label(for="selectBox").mb5 Gender
+                            select(id="selectBox", name="sex").mr10
+                                option(value="1") Man
+                                option(value="2") Woman
+                        div.select_name.fc
+                            label(for="fistName").mb5 Fist name
+                            input(id="fistName", type="text", name="name", required)
+                    .birthday_box.fc.mb40
+                        label(for="").mb5 Date of birth (optional)
+                        .fr
+                            input(type="text", name="year", placeholder="year", required)
+                            input(type="text", name="month", placeholder="month", required)
+                            input(type="text", name="day", placeholder="day", required)
+                    .notification_box.fr.mb40
+                        input(type="checkbox", name="notification", checked).mr10#notification
+                        .notification_text
+                            p Sign up for style news and offers
+                            p.tdul.mt10 What will I receive?
                             
-                    p.mb40 By registering, your account will be subject to the Terms and Conditions & Privacy Policy
+                    p.tos.mb40 By registering, your account will be subject to the 
+                        span.tdul Terms and Conditions 
+                        | &amp; 
+                        span.tdul Privacy Policy
+                    input(type="submit", value="Test Submit Button")
                     input(type="button" value="Create Account").mb40#loginMainBtn
                 hr.mb40
                 .account_register
@@ -45,3 +63,4 @@ html(lang="en")
         include partials/footer
 
     script(src="/static/js/header.js") 
+    script(src="/static/js/register.js") 
