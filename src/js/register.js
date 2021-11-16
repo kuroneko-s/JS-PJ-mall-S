@@ -4,20 +4,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const passwordBtnEl = document.getElementById("passwordBtn");
   const validateEl = document.querySelectorAll(".validate_box");
   const warningIconEls = document.querySelectorAll(".warning_icon");
+  const regex = /^[a-zA-Z0-9]{6,30}$/gi;
 
   const submitBtnClickHandler = (e) => {
     inactiveWarningIcon();
     inactiveWarningBox();
     validateElement();
-    // if (validateElement()) {
-    //   console.log("success")
-    // }else {
-    //   console.log("failed")
-    //   return;
-    //   // warring message
-    // }
-
-    // form submit!
   };
 
   const hasValidateIsTrue = (el, arr) => {
@@ -28,6 +20,32 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const hasInputEl = (el) => {
     return el.querySelector("input") != null;
+  };
+
+  const validateElement = () => {
+    const nodeEls = checkValidateForEl();
+    nodeEls
+      .filter((el) => el.dataset.validate === "true")
+      .filter((el) => isEmpty(el.value))
+      .filter((el) => {
+        if (el.getAttribute("id") === "password") return true;
+        // TODO : regex 검증해야함...
+        checkSpecialCharacters(el.value);
+      })
+      .map((el) => {
+        let validateEl = checkValidateBox(el);
+        if (validateEl == undefined) {
+          return;
+        }
+
+        activeWaringBox(validateEl);
+        activeWarning(validateEl);
+      });
+  };
+
+  const checkSpecialCharacters = (str) => {
+    const result = str.match(regex);
+    return isEmpty(result) ? true : false;
   };
 
   const checkValidateForEl = () => {
@@ -42,23 +60,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     return result;
-  };
-
-  const validateElement = () => {
-    // dataset -> validate = true checked
-    const nodeEls = checkValidateForEl();
-    nodeEls
-      .filter((el) => el.dataset.validate === "true")
-      .filter((el) => isEmpty(el.value))
-      .map((el) => {
-        let validateEl = checkValidateBox(el);
-        if (validateEl == undefined) {
-          return;
-        }
-
-        activeWaringBox(validateEl);
-        activeWarning(validateEl);
-      });
   };
 
   const inactiveWarningBox = () => {
