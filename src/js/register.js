@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const passwordBtnEl = document.getElementById("passwordBtn");
   const validateEl = document.querySelectorAll(".validate_box");
   const warningIconEls = document.querySelectorAll(".warning_icon");
-  const regex = /^[a-zA-Z0-9]{6,30}$/gi;
+  const alphabetAndNumber = /^[a-zA-Z0-9]{6,30}$/gi;
+  const onlyNumber = /^[0-9]{0,4}$/;
 
   const submitBtnClickHandler = (e) => {
     inactiveWarningIcon();
@@ -28,9 +29,17 @@ window.addEventListener("DOMContentLoaded", () => {
       .filter((el) => el.dataset.validate === "true")
       .filter((el) => isEmpty(el.value))
       .filter((el) => {
-        if (el.getAttribute("id") === "password") return true;
-        // TODO : regex 검증해야함...
-        checkSpecialCharacters(el.value);
+        const attr = el.getAttribute("id");
+
+        if (attr === "password") {
+          // TODO: password 검증절차 진행
+          return true;
+        } else if (attr === "account" || attr === "name") {
+          return checkSpecialCharacters(el.value);
+        } else {
+          // TODO: Date of birth -> 오직 숫자만
+          return checkNumber(el);
+        }
       })
       .map((el) => {
         let validateEl = checkValidateBox(el);
@@ -43,8 +52,31 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-  const checkSpecialCharacters = (str) => {
-    const result = str.match(regex);
+  const checkNumber = (el) => {
+    const value = el.value;
+    if (isEmpty(value)) {
+      return true;
+    }
+
+    // TODO : 논리 확인
+    const type = el.getAttribute("name");
+    switch (type) {
+      case "year":
+        break;
+      case "month":
+        break;
+      case "day":
+        break;
+      default:
+        return true;
+    }
+
+    const result = value.match(onlyNumber);
+    return isEmpty(result) ? true : false;
+  };
+
+  const checkSpecialCharacters = (value) => {
+    const result = value.match(alphabetAndNumber);
     return isEmpty(result) ? true : false;
   };
 
