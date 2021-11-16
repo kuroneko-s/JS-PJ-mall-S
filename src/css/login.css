@@ -22,30 +22,28 @@
 }
 
 .container form {
-  width: 50%;
-  padding: 20px;
+  width: 38%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   cursor: default;
 }
 
-.container input:not([type="button"]) {
+.container form input:not([type="button"]) {
   border: none;
   border-bottom: 1px solid var(--black-arpha04);
   height: 35px;
-  width: 90%;
+  width: 100%;
 
   font-size: 1.1rem;
 }
 
-.container input:not([type="button"]):hover {
+.container form input:not([type="button"]):hover {
   font-weight: 600;
 }
 
-.container input[type="button"] {
-  width: 90%;
+.container form input[type="button"] {
+  width: 100%;
   height: 35px;
   background-color: var(--black);
   color: var(--white);
@@ -54,7 +52,7 @@
   cursor: pointer;
 }
 
-.container input[type="button"]:hover {
+.container form input[type="button"]:hover {
   background-color: var(--black-arpha06);
 }
 
@@ -71,31 +69,40 @@
 
 .container hr {
   opacity: 0.7;
-  width: 80%;
+  width: 38%;
 }
 
-.container .account_find {
-  border-bottom: 1px solid var(--black-arpha04);
-  padding: 10px;
+.container .account_find span {
+  width: auto;
   font-weight: 500;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
-.container .account_find:hover {
+.container .account_find span:hover {
   opacity: 0.7;
   font-weight: 400;
 }
 
-.container .account_register {
-  width: 80%;
+.login_box .account_register {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.container .account_register span {
-  opacity: 0.65;
-  border-bottom: 1px solid var(--black-arpha04);
+.login_box .account_register input[type="button"] {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black-arpha04);
+
+  width: 100%;
+  height: 35px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
-.container .account_register span:hover {
-  opacity: 1;
+.login_box .account_register input[type="button"]:hover {
   font-weight: 500;
 }

@@ -1,0 +1,193 @@
+.container {
+  min-height: 88vh !important;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Global Element */
+.register_form small {
+  font-size: 0.8rem;
+  color: var(--validate-red);
+}
+
+.register_form select {
+  outline: none;
+}
+
+input[title]:hover::after {
+  background-color: tomato;
+}
+
+.container .register_box {
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.login_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.container form {
+  width: 38%;
+
+  justify-content: center;
+  cursor: default;
+}
+
+.container form input:not([type="button"]) {
+  border: none;
+  height: 35px;
+  width: 100%;
+
+  font-size: 1.1rem;
+}
+
+.container form input:not([type="button"]):hover {
+  font-weight: 600;
+}
+
+.container form input[type="button"] {
+  width: 100%;
+  height: 35px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.container form input[type="button"]:hover {
+  background-color: var(--black-arpha06);
+}
+
+.container form input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.register_form .password_box input {
+  border: none !important;
+}
+
+.register_form .password_box .password_btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.register_form .password_box small {
+  color: var(--black) !important;
+  font-size: 0.8rem;
+}
+
+.register_form .select_box {
+  width: 30%;
+}
+
+.register_form .select_box select {
+  height: 35px;
+}
+
+.register_form .select_name {
+  width: 100%;
+}
+
+.register_form .birthday_box input[type="text"] {
+  border: 1px solid var(--black-arpha04);
+}
+
+.register_form .birthday_box div {
+  width: 50%;
+}
+
+.register_form .notification_box {
+  width: 100%;
+  align-items: center;
+}
+
+.register_form .notification_text {
+  width: 100%;
+}
+
+.register_form .notification_box input {
+  height: 27px !important;
+  width: 27px !important;
+}
+
+.register_form .notification_text p:nth-child(1) {
+  font-weight: 600;
+}
+
+.register_form .tos {
+  font-size: 0.8rem;
+}
+
+.register_form .tos span {
+  cursor: pointer;
+}
+
+.container .account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container hr {
+  opacity: 0.7;
+  width: 38%;
+}
+
+.container .account_register {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register_box .account_register input[type="button"] {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black-arpha04);
+
+  width: 100%;
+  height: 35px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.register_box .account_register input[type="button"]:hover {
+  font-weight: 500;
+}
+
+/* validation css code */
+.validate {
+  border: 2px solid var(--validate-red) !important;
+}
+
+.warning_icon {
+  display: flex !important;
+  align-items: center;
+
+  height: 27px;
+  width: 27px;
+  right: 0;
+  font-size: 1.5rem;
+  color: var(--validate-red);
+}
+
+.register_form .account_box div,
+.register_form .password_box div,
+.register_form .select_name div {
+  position: relative;
+  align-items: center;
+  border: 1px solid var(--black-arpha04);
+}

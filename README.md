@@ -39,6 +39,14 @@ REST API같은건 안쓸건데 연계쓸때 사용할 수 있음
 - /success → success.pug (결제 성공화면)
 - /failed → failed.pug (결제 실패화면)
 
+# key point
+
+- login express session
+- db - postgresql
+- fixed popup & chat system ( text & phote ) -> websocket
+- payment system
+- video chat -> websocket
+
 제작기간 4주 (시작 10월 24일)
 
 # 추가 고려해볼만한 기능
@@ -49,6 +57,19 @@ REST API같은건 안쓸건데 연계쓸때 사용할 수 있음
 
 ## https://www.net-a-porter.com/en-kr/
 
-페이지 로딩되는 프로그레스 바 상단에 보여주기
+# TODO List
 
-REST API는 xios
+- [ ] main page
+- [ ] items page
+- [ ] login page
+- [ ] register page
+- [ ] find passwod page
+- [ ] item page
+- [ ] pregress bar in header
+- [ ] chat system
+- [ ] video chat system
+- [ ] connect DB
+- [ ] payment system
+- [ ] payment page
+
+password 찾을때 이메일 & 전화번호로 검증해서 사용

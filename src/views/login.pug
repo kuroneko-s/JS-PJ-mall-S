@@ -19,13 +19,15 @@ html(lang="en")
                 form(action="post")
                     input(type="text", placeholder="Account").mb40
                     input(type="password", placeholder="Password").mb40
-                    .account_find.mb10#accountFind Forgotten Your Password?
-                    input(type="button" value="LOGIN")
-                hr
-                .account_register 
-                    span Don't have an account? 
-                    span#accountRegister Register now
+                    .account_find.mb40
+                        span.tdul#mainAccountFind Forgotten Your Password?
+                    input(type="button" value="LOGIN").mb40#loginMainBtn
+                hr.mb40
+                .account_register
+                    div.mb20 Don't have an account? 
+                    input(type="button", value="Register now").ml10#mainAccountRegister
                 
         include partials/footer
 
     script(src="/static/js/header.js") 
+    script(src="/static/js/login.js") 

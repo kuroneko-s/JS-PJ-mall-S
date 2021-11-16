@@ -5,6 +5,7 @@
   --black-arpha08: #111111cc;
   --black: #111111;
   --check-box: #ff4757;
+  --validate-red: rgba(255, 35, 40, 0.7);
   --white: #fff;
 }
 
@@ -104,6 +105,10 @@
   margin-left: 10px;
 }
 
+.mb5 {
+  margin-bottom: 5px;
+}
+
 .mb10 {
   margin-bottom: 10px;
 }
@@ -142,7 +147,11 @@
 
 /* */
 .dispnone {
-  display: none;
+  display: none !important;
+}
+
+.tdul {
+  text-decoration: underline;
 }
 
 .test {
