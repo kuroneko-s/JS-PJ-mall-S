@@ -4,10 +4,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const submitBtnEl = document.getElementById("loginMainBtn");
   const formEl = document.getElementById("registerForm");
   const passwordBtnEl = document.getElementById("passwordBtn");
-  const validateEl = document.querySelectorAll('.validate_box')
+  const validateEl = document.querySelectorAll(".validate_box");
 
   const submitBtnClickHandler = (e) => {
-    validateElement()
+    validateElement();
     // if (validateElement()) {
     //   console.log("success")
     // }else {
@@ -20,76 +20,75 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   const hasValidateIsTrue = (el, arr) => {
-    if (el.hasAttribute("data-validate") && 
-          el.dataset.validate === "true"){
-      arr.push(el)
+    if (el.hasAttribute("data-validate") && el.dataset.validate === "true") {
+      arr.push(el);
     }
-  }
+  };
 
   const hasInputEl = (el) => {
-    return el.querySelector('input') != null
-  }
+    return el.querySelector("input") != null;
+  };
 
   const checkValidateForEl = () => {
     const result = [];
 
-    validateEl.forEach(el => {
-      hasValidateIsTrue(el, result)
-    
-      if ( hasInputEl(el) ) {
-        hasValidateIsTrue(el.querySelector('input'), result)
-      }
-    })
+    validateEl.forEach((el) => {
+      hasValidateIsTrue(el, result);
 
-    return result
-  }
+      if (hasInputEl(el)) {
+        hasValidateIsTrue(el.querySelector("input"), result);
+      }
+    });
+
+    return result;
+  };
 
   const validateElement = () => {
     // dataset -> validate = true checked
-    const nodeEls = checkValidateForEl()
-    nodeEls.filter(el => el.dataset.validate === 'true')
-          .filter(el => common.isEmpty(el.value))
-          .map(el => {
-            let validateEl = checkValidateBox(el)
-            if (validateEl == undefined) {
-              return
-            }
+    const nodeEls = checkValidateForEl();
+    nodeEls
+      .filter((el) => el.dataset.validate === "true")
+      .filter((el) => common.isEmpty(el.value))
+      .map((el) => {
+        let validateEl = checkValidateBox(el);
+        if (validateEl == undefined) {
+          return;
+        }
 
-            validateEl.classList.add("validate")
-          })
+        validateEl.classList.add("validate");
+      });
+  };
 
-  }
-
-  const removeValidate = (el) => {el.classList.remove("validate")}
+  const removeValidate = (el) => {
+    el.classList.remove("validate");
+  };
 
   const checkValidateBox = (el) => {
-    if ( el.classList.contains("validate_box") ){
-      removeValidate(el)
-      return el
+    if (el.classList.contains("validate_box")) {
+      removeValidate(el);
+      return el;
     }
 
-    return checkParentClassList(el)
-  }
+    return checkParentClassList(el);
+  };
 
   const checkParentClassList = (el) => {
-    let parent = el.parentElement
-    let result = checkValidateBox(parent)
+    let parent = el.parentElement;
+    let result = checkValidateBox(parent);
 
-    while(!result) {
+    while (!result) {
       if (parent.classList.contains("register_box")) {
-        parent = undefined
+        parent = undefined;
         break;
       }
 
-      parent = parent.parentElement
-      result = checkValidateBox(parent)
+      parent = parent.parentElement;
+      result = checkValidateBox(parent);
     }
 
-    removeValidate(el)
-    return parent
-  }
-
-  
+    removeValidate(el);
+    return parent;
+  };
 
   const passwordBtnClickHandler = (e) => {
     let el = e.target;
