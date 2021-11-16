@@ -19,13 +19,13 @@ html(lang="en")
                 form(action="post", novalidate).register_form.fc#registerForm
                     .account_box.mb40.fc
                         label(for="account").mb5 Account
-                        .mb10.fr.validate_box
+                        div(data-index="0").mb10.fr.validate_box
                             input(id="account", type="text", name="account", required, data-validate="true")
                             i.fas.fa-exclamation-circle.warning_icon.dispnone
                         small.dispnone Validation Message
                     .password_box.mb40.fc
                         label(for="password").mb5 Password
-                        .mb10.fr.validate_box
+                        div(data-index="1").mb10.fr.validate_box
                             i.far.fa-eye.password_btn.mr10.ml10#passwordBtn
                             input(id="password", type="password", name="password", required, data-validate="true")
                             i.fas.fa-exclamation-circle.warning_icon.dispnone
@@ -34,12 +34,12 @@ html(lang="en")
                         .privacy_input_box.fr.mb10
                             div.select_box.fc
                                 label(for="selectBox").mb5 Gender
-                                select(id="selectBox", name="sex").mr10.validate_box
+                                select(id="selectBox", name="sex").mr10
                                     option(value="1", checked) Man
                                     option(value="2") Woman
                             div.select_name.fc
                                 label(for="name").mb5 Name
-                                .fr.validate_box
+                                div(data-index="2").fr.validate_box
                                     input(id="name", type="text", name="name", required, data-validate="true")
                                     i.fas.fa-exclamation-circle.warning_icon.dispnone
                         small.dispnone Validation Message

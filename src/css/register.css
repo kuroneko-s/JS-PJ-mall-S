@@ -16,6 +16,10 @@
   outline: none;
 }
 
+.register_form label {
+  font-weight: 500;
+}
+
 input[title]:hover::after {
   background-color: tomato;
 }
@@ -33,7 +37,7 @@ input[title]:hover::after {
 }
 
 .container form {
-  width: 38%;
+  width: 29%;
 
   justify-content: center;
   cursor: default;
@@ -171,6 +175,10 @@ input[title]:hover::after {
 /* validation css code */
 .validate {
   border: 2px solid var(--validate-red) !important;
+}
+
+.validate_box {
+  padding: 0 5px;
 }
 
 .warning_icon {

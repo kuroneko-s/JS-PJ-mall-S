@@ -1,12 +1,13 @@
-import * as common from "./common";
-
 window.addEventListener("DOMContentLoaded", () => {
   const submitBtnEl = document.getElementById("loginMainBtn");
   const formEl = document.getElementById("registerForm");
   const passwordBtnEl = document.getElementById("passwordBtn");
   const validateEl = document.querySelectorAll(".validate_box");
+  const warningIconEls = document.querySelectorAll(".warning_icon");
 
   const submitBtnClickHandler = (e) => {
+    inactiveWarningIcon();
+    inactiveWarningBox();
     validateElement();
     // if (validateElement()) {
     //   console.log("success")
@@ -48,15 +49,42 @@ window.addEventListener("DOMContentLoaded", () => {
     const nodeEls = checkValidateForEl();
     nodeEls
       .filter((el) => el.dataset.validate === "true")
-      .filter((el) => common.isEmpty(el.value))
+      .filter((el) => isEmpty(el.value))
       .map((el) => {
         let validateEl = checkValidateBox(el);
         if (validateEl == undefined) {
           return;
         }
 
-        validateEl.classList.add("validate");
+        activeWaringBox(validateEl);
+        activeWarning(validateEl);
       });
+  };
+
+  const inactiveWarningBox = () => {
+    validateEl.forEach((el) => {
+      if (!el.classList.contains("validate")) return;
+
+      el.classList.remove("validate");
+    });
+  };
+
+  const activeWaringBox = (el) => {
+    el.classList.add("validate");
+  };
+
+  const activeWarning = (el) => {
+    if (!el.hasAttribute("data-index")) return;
+
+    warningIconEls[el.dataset.index].classList.remove("dispnone");
+  };
+
+  const inactiveWarningIcon = () => {
+    warningIconEls.forEach((el) => {
+      if (!el.classList.contains("dispnone")) {
+        el.classList.add("dispnone");
+      }
+    });
   };
 
   const removeValidate = (el) => {
@@ -104,3 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
   submitBtnEl.addEventListener("click", submitBtnClickHandler);
   passwordBtnEl.addEventListener("click", passwordBtnClickHandler);
 });
+
+const isEmpty = (v) => {
+  return v == undefined || v == null || v == "";
+};
