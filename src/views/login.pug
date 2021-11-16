@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 doctype html
 html(lang="en")
     head
@@ -31,38 +30,4 @@ html(lang="en")
         include partials/footer
 
     script(src="/static/js/header.js") 
-=======
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge 'self'")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="/static/css/login.css")
-        link(rel="stylesheet", href="/static/css/common.css")
-        link(rel="stylesheet", href="/static/css/footer.css")
-        link(rel="stylesheet", href="/static/css/header.css")
-        link(rel="stylesheet", href="/static/css/reset.css")
-        link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", rel="stylesheet") 
-        title Login
-    body
-        include partials/header
-        main.container
-            .login_box
-                .login_title.mb50 LOGIN
-                form(action="post")
-                    input(type="text", placeholder="Account").mb40
-                    input(type="password", placeholder="Password").mb40
-                    .account_find.mb40
-                        span.tdul#mainAccountFind Forgotten Your Password?
-                    input(type="button" value="LOGIN").mb40#loginMainBtn
-                hr.mb40
-                .account_register
-                    div.mb20 Don't have an account? 
-                    input(type="button", value="Register now").ml10#mainAccountRegister
-                
-        include partials/footer
-
-    script(src="/static/js/header.js") 
->>>>>>> 155242d9770d2fdbe12fb78188112dd009364c47
     script(src="/static/js/login.js") 
