@@ -87,7 +87,6 @@ input[title]:hover::after {
 }
 
 .register_form .password_box small {
-  color: var(--black) !important;
   font-size: 0.8rem;
 }
 
@@ -179,6 +178,15 @@ input[title]:hover::after {
 
 .validate_box {
   padding: 0 5px;
+}
+
+.small_text {
+  color: var(--black) !important;
+}
+
+.warning_text {
+  font-size: 0.8rem;
+  color: var(--validate-red) !important;
 }
 
 .warning_icon {

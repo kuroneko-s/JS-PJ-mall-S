@@ -20,16 +20,16 @@ html(lang="en")
                     .account_box.mb40.fc
                         label(for="account").mb5 Account
                         div(data-index="0").mb10.fr.validate_box
-                            input(id="account", type="text", name="account", required, data-validate="true")
+                            input(id="account", type="text", name="account", required, data-validate="true", maxlength="30")
                             i.fas.fa-exclamation-circle.warning_icon.dispnone
-                        small.dispnone Validation Message
+                        small.dispnone 30자 이하로 입력해주시기 바랍니다.
                     .password_box.mb40.fc
                         label(for="password").mb5 Password
                         div(data-index="1").mb10.fr.validate_box
                             i.far.fa-eye.password_btn.mr10.ml10#passwordBtn
-                            input(id="password", type="password", name="password", required, data-validate="true")
+                            input(id="password", type="password", name="password", required, data-validate="true", maxlength="50")
                             i.fas.fa-exclamation-circle.warning_icon.dispnone
-                        small Your password must be eight characters or more and contain both an uppercase letter and a number
+                        small.small_text 8자 이상 특수문자, 알파벳, 숫자가 포함되게 만들어주세요.
                     .privacy_box.fc.mb40
                         .privacy_input_box.fr.mb10
                             div.select_box.fc
@@ -40,15 +40,15 @@ html(lang="en")
                             div.select_name.fc
                                 label(for="name").mb5 Name
                                 div(data-index="2").fr.validate_box
-                                    input(id="name", type="text", name="name", required, data-validate="true")
+                                    input(id="name", type="text", name="name", required, data-validate="true", maxlength="30")
                                     i.fas.fa-exclamation-circle.warning_icon.dispnone
                         small.dispnone Validation Message
                     .birthday_box.fc.mb40
                         label(for="").mb5 Date of birth (optional)
                         .fr.mb10
-                            input(type="text", name="year", placeholder="year", required, data-validate="true").validate_box
-                            input(type="text", name="month", placeholder="month", required, data-validate="true").validate_box
-                            input(type="text", name="day", placeholder="day", required, data-validate="true").validate_box
+                            input(type="text", id='year', name="year", required, data-validate="true", maxlength="4", data-date="3").validate_box
+                            input(type="text", id='month', name="month", placeholder="01", required, data-validate="true", maxlength="2", data-date="3").validate_box
+                            input(type="text", id='day', name="day", placeholder="01", required, data-validate="true", maxlength="2", data-date="3").validate_box
                         small.dispnone Validation Message
                     .notification_box.fr.mb40
                         input(type="checkbox", name="notification", checked).mr10#notification
