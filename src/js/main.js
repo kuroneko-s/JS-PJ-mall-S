@@ -16,3 +16,12 @@ const mouseOverHandler = (e) => {
   e.target.classList.remove("unscale_img");
   e.target.classList.add("scale_img");
 };
+
+window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const result = urlParams.get("success");
+  // TODO: result create Popup
+  if (result) {
+    alert("Account Create!!!");
+  }
+};

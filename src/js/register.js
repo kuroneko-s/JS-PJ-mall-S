@@ -24,11 +24,17 @@ window.addEventListener("DOMContentLoaded", () => {
     dayEl.placeholder = today.getDate();
   })();
 
+  // front에서 한번 검증하고 back단에서 한번더 검증
   const submitBtnClickHandler = (e) => {
     inactiveWarningIcon();
     inactiveWarningBox();
     inactiveWarningText();
-    validateElement();
+
+    const result = validateElement();
+    if (result) {
+      // form submit
+      formEl.submit();
+    }
   };
 
   const passwordBtnClickHandler = (e) => {
@@ -93,6 +99,7 @@ const hasInputEl = (el) => {
 };
 
 const validateElement = () => {
+  let result = true;
   const nodeEls = checkValidateForEl();
   nodeEls
     .filter((el) => el.dataset.validate === "true")
@@ -116,7 +123,11 @@ const validateElement = () => {
       activeWaringBox(validateEl);
       activeWarning(validateEl);
       activeWarningText(validateEl);
+
+      result = false;
     });
+
+  return result;
 };
 
 const checkNumber = (el) => {
@@ -126,7 +137,7 @@ const checkNumber = (el) => {
   const type = el.getAttribute("name");
   switch (type) {
     case "year":
-      console.log(value <= today.getFullYear());
+      if (value.length != 4) return true;
       return value > today.getFullYear();
     case "month":
       return value >= 13;
@@ -195,10 +206,13 @@ const activeWarningText = (el) => {
   } else {
     return true;
   }
-  // TODO 이부분 로직 수정
+
   warningTextEls[index].classList.remove(DISPLAY_NONE);
-  warningTextEls[1].classList.add("warning_text");
-  warningTextEls[1].classList.remove("small_text");
+
+  if (index == 1) {
+    warningTextEls[1].classList.add("warning_text");
+    warningTextEls[1].classList.remove("small_text");
+  }
 };
 
 const inactiveWarningText = () => {
@@ -206,7 +220,10 @@ const inactiveWarningText = () => {
     !el.classList.contains(DISPLAY_NONE) ? el.classList.add(DISPLAY_NONE) : true
   );
   // TODO 이부분 로직 수정
-  warningTextEls[1].classList.remove(DISPLAY_NONE);
-  warningTextEls[1].classList.remove("warning_text");
-  warningTextEls[1].classList.add("small_text");
+
+  const passwordEl = warningTextEls[1];
+
+  passwordEl.classList.remove(DISPLAY_NONE);
+  passwordEl.classList.remove("warning_text");
+  passwordEl.classList.add("small_text");
 };

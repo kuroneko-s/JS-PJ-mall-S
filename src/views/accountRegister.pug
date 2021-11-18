@@ -16,7 +16,7 @@ html(lang="en")
         main.container.fc
             .register_box.fc
                 .login_title.mb50 REGISTER
-                form(action="post", novalidate).register_form.fc#registerForm
+                form(action="register", method="POST", novalidate).register_form.fc#registerForm
                     .account_box.mb40.fc
                         label(for="account").mb5 Account
                         div(data-index="0").mb10.fr.validate_box
@@ -31,25 +31,26 @@ html(lang="en")
                             i.fas.fa-exclamation-circle.warning_icon.dispnone
                         small.small_text 8자 이상 특수문자, 알파벳, 숫자가 포함되게 만들어주세요.
                     .privacy_box.fc.mb40
-                        .privacy_input_box.fr.mb10
+                        .privacy_input_box.fr
                             div.select_box.fc
                                 label(for="selectBox").mb5 Gender
-                                select(id="selectBox", name="sex").mr10
+                                select(id="selectBox", name="gender").mr10
                                     option(value="1", checked) Man
                                     option(value="2") Woman
                             div.select_name.fc
                                 label(for="name").mb5 Name
-                                div(data-index="2").fr.validate_box
+                                div(data-index="2").fr.validate_box.mb10
                                     input(id="name", type="text", name="name", required, data-validate="true", maxlength="30")
                                     i.fas.fa-exclamation-circle.warning_icon.dispnone
-                        small.dispnone Validation Message
+                                small.dispnone please input text.
+                        
                     .birthday_box.fc.mb40
                         label(for="").mb5 Date of birth (optional)
                         .fr.mb10
                             input(type="text", id='year', name="year", required, data-validate="true", maxlength="4", data-date="3").validate_box
                             input(type="text", id='month', name="month", placeholder="01", required, data-validate="true", maxlength="2", data-date="3").validate_box
                             input(type="text", id='day', name="day", placeholder="01", required, data-validate="true", maxlength="2", data-date="3").validate_box
-                        small.dispnone Validation Message
+                        small.dispnone please input year, month, day
                     .notification_box.fr.mb40
                         input(type="checkbox", name="notification", checked).mr10#notification
                         .notification_text

@@ -125,3 +125,8 @@ body {
   font-weight: 600;
   background-color: rgba(189, 195, 199, 0.8);
 }
+
+/* create popup */
+.create_account {
+  content: "Hello";
+}
