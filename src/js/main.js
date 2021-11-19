@@ -1,5 +1,7 @@
 const accordionEl = document.getElementById("accordion");
 const imgEls = accordionEl.querySelectorAll("img");
+const alertEl = document.getElementById("createAccount");
+const alertBtnEl = alertEl.querySelector("input");
 
 window.addEventListener("DOMContentLoaded", () => {
   accordionEl.addEventListener("mouseover", mouseOverHandler);
@@ -20,8 +22,14 @@ const mouseOverHandler = (e) => {
 window.onload = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const result = urlParams.get("success");
-  // TODO: result create Popup
+
+  const alertBtnClickHandler = (e) => {
+    console.log(e.target.parentNode);
+    e.target.parentNode.classList.remove("active");
+  };
+
   if (result) {
-    alert("Account Create!!!");
+    alertEl.classList.add("active");
+    alertBtnEl.addEventListener("click", alertBtnClickHandler);
   }
 };

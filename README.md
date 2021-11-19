@@ -59,12 +59,13 @@ REST API같은건 안쓸건데 연계쓸때 사용할 수 있음
 
 # TODO List
 
-- [ ] main page
-- [ ] items page
-- [ ] login page
-- [ ] register page
-- [ ] find passwod page
+- [x] main page
+- [x] items page
+- [x] login page
+- [x] register page
+- [ ] register page 약관정보 보여주는 사이트 개설
 - [ ] item page
+- [ ] find passwod page
 - [ ] pregress bar in header
 - [ ] chat system
 - [ ] video chat system

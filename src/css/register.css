@@ -145,11 +145,11 @@ input[title]:hover::after {
 
 .container hr {
   opacity: 0.7;
-  width: 38%;
+  width: 29%;
 }
 
 .container .account_register {
-  width: 38%;
+  width: 29%;
   display: flex;
   flex-direction: column;
   justify-content: center;

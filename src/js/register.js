@@ -1,4 +1,4 @@
-const submitBtnEl = document.getElementById("loginMainBtn");
+const submitBtnEl = document.getElementById("createAccountBtn");
 const formEl = document.getElementById("registerForm");
 const passwordBtnEl = document.getElementById("passwordBtn");
 const validateEl = document.querySelectorAll(".validate_box");
@@ -7,6 +7,7 @@ const warningTextEls = document.querySelectorAll("small");
 const yearEl = document.getElementById("year");
 const monthEl = document.getElementById("month");
 const dayEl = document.getElementById("day");
+const loginHandlerEl = document.getElementById("loginHandlerBtn");
 
 const DISPLAY_NONE = "dispnone";
 
@@ -50,6 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   submitBtnEl.addEventListener("click", submitBtnClickHandler);
   passwordBtnEl.addEventListener("click", passwordBtnClickHandler);
+  loginHandlerEl.addEventListener(
+    "click",
+    () => (window.location.href = "/login")
+  );
 });
 
 /* Private Function */

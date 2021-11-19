@@ -128,5 +128,45 @@ body {
 
 /* create popup */
 .create_account {
-  content: "Hello";
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  width: 220px;
+  height: 150px;
+  top: -150px;
+  left: 44%;
+
+  border-radius: 4%;
+  text-align: center;
+
+  color: var(--black);
+  background-color: white;
+}
+
+input[type="button"] {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.create_account input[type="button"] {
+  width: 40%;
+  height: 28px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+}
+.create_account p {
+  max-width: 80%;
+}
+
+.active {
+  top: 0px !important;
 }
